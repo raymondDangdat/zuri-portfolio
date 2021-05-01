@@ -29,8 +29,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  TextStyle customTextStyle(Color textColor, double fontSize) {
-    return TextStyle(color: textColor, fontSize: fontSize);
+  TextStyle customTextStyle(double fontSize) {
+    return TextStyle(color: Colors.white, fontSize: fontSize);
   }
 
   @override
@@ -39,6 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.black,
       body: SafeArea(
           child: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
             SizedBox(
@@ -48,7 +49,6 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text(
                 'Hi!',
                 style: customTextStyle(
-                  Colors.white,
                   32,
                 ),
               ),
@@ -60,7 +60,6 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text(
                 "I'm Raymond Dangdat",
                 style: customTextStyle(
-                  Colors.white,
                   20,
                 ),
               ),
@@ -69,12 +68,96 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 20,
             ),
             Container(
-              height: 100,
-              width: 100,
+              height: 120,
+              width: 120,
               decoration: BoxDecoration(
                   color: Colors.blueAccent,
-                  borderRadius: BorderRadius.circular(50),
-                  image: DecorationImage(image: AssetImage("assets/images/passport.png"))),
+                  borderRadius: BorderRadius.circular(100),
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/passport.png"),
+                      fit: BoxFit.cover)),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Text(
+              "I Flutter with",
+              style: customTextStyle(18),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Dart!',
+              style: customTextStyle(22),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: 45,
+              width: 200,
+              decoration: BoxDecoration(
+                  color: Colors.blueAccent,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20.0),
+                  )),
+              alignment: Alignment.center,
+              child: Text(
+                "Let's Connect!",
+                style: customTextStyle(20),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Expanded(
+                    child: Container(
+                  height: 70,
+                  decoration: BoxDecoration(
+                      color: Colors.blueAccent,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Facebook',
+                        style: customTextStyle(20),
+                      ),
+                      Text(
+                        '@raymonddangdat',
+                        style: customTextStyle(16),
+                      )
+                    ],
+                  ),
+                )),
+                SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                    child: Container(
+                  height: 70,
+                  decoration: BoxDecoration(
+                      color: Colors.blueAccent,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Twitter',
+                        style: customTextStyle(20),
+                      ),
+                      Text(
+                        '@raymonddangdat',
+                        style: customTextStyle(16),
+                      )
+                    ],
+                  ),
+                )),
+              ],
             )
           ],
         ),
